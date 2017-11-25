@@ -1,0 +1,71 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <title>My music player</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <link href="css/style.css" type="text/css" rel="stylesheet">
+    <link href="css/font-awesome-4.7.0/css/font-awesome.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="body">
+            <div class="Song">
+                <marquee>
+                    <h4 id="songTitle"><b>Song</b> : Song Tittle song goes here...</h4>
+                </marquee>
+            </div>
+
+            <div class="volumeSlider">
+                <i class="fa fa-volume-up"></i>
+                <input type="range" min="0" step="0.01" max="1" onchange="adjustVolume()" orient="vertical" value="0.5" id="volume">
+                <i class="fa fa-volume-down"></i>
+            </div>
+        </div>
+        <div class="controls">
+            <div class="mini-containers">
+                <i class="fa fa-caret-left fa-2x" onclick="previous()"></i>
+            </div>
+            <div class="mini-containers">
+                <i class="fa fa-fast-backward fa-2x" onclick="backward()"></i>
+            </div>
+            <div class="mini-containers play">
+                <i class="fa fa-pause-circle-o fa-5x" id="play" onclick="playOrPauseSong()"></i>
+            </div>
+            <div class="mini-containers">
+                <i class="fa fa-fast-forward fa-2x" onclick="forward()"></i>
+            </div>
+            <div class="mini-containers">
+                <i class="fa fa-caret-right fa-2x" onclick="next()"></i>
+            </div>
+        </div>
+        <div class="detail">
+            <div class="mini-containers details">
+                <marquee>
+                    <h4 id="nextTitle">
+                        <b>Next Song</b> : Name of Next song goes in here...
+                    </h4>
+                </marquee>
+            </div>
+            <div class="mini-containers details">
+                <div class="current-time">
+                    <h4 id="currentTime">0.00</h4>
+                </div>
+            </div>
+            <div class="mini-containers details">
+                <input class="song-slider" id="songSlider" onchange="seekSong()" type="range" min="1" step="0" value="0">
+            </div>
+            <div class="mini-containers details">
+                <div class="duration">
+                    <h4 id="duration">0.00</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/player.js"></script>
+</body>
+
+</html>
